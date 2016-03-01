@@ -1,1 +1,32 @@
 // Insert your mixins
+
+@mixin imgback($url,$pos){
+	background-image:url($url);
+    background-position: $pos;
+}
+@mixin textstyle($col, $textpos, $font, $fontsize, $fontweight){
+	color: $col;
+    text-align: $textpos;
+    font-family: $font;
+    font-size: $fontsize;
+    font-weight: $fontweight;
+}
+
+@mixin ulstyle($flow, $backcol, $margin, $padding, $align, $liststyle){
+	overflow: $flow;
+	background-color: $backcol;
+	margin: $margin;
+	padding: $padding;
+	text-align: $align;
+	list-style-type: $liststyle;
+}
+@mixin divtext($display, $decor){
+	display: $display;
+	text-decoration: $decor;
+}
+@mixin textstyle2($col, $textpos, $fontsize, $fontweight){
+	color: $col;
+    text-align: $textpos;
+    font-size: $fontsize;
+    font-weight: $fontweight;
+}

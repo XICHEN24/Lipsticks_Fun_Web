@@ -1,1 +1,210 @@
 // Add any custom Sass & CSS here
+@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+h1{
+	@include textstyle($orange, center, $font-main, 300%, bold); 
+}
+
+
+.sticky{
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:999;
+
+	ul{
+		@include breakpoint(medium only) { 
+			@include ulstyle(hidden, $black, 0, 5px, center, none);
+		}
+		@include ulstyle(hidden, $black, 0, 10px, center, none);
+		li{
+			float: left;
+			background-color: $black;
+			a{
+				@include breakpoint(small only){
+					padding:5px 8px; 
+					@include divtext(inline-block, none); 
+					@include textstyle2($white, center, 70%, bold);
+				}
+				@include breakpoint(medium only){
+					padding:8px 20px; 
+					@include divtext(inline-block, none); 
+					@include textstyle2($white, center, 100%, bold);
+				}
+				padding:10px 25px; 
+				@include divtext(inline-block, none); 
+				@include textstyle2($white, center, 120%, bold);
+			}
+			a:hover{
+				background-color:$dark-gray;
+				color:$black;
+			}
+		}
+	}
+}
+
+.background {
+	text-align:center;
+	background: url("../data/background2.jpg") no-repeat center center;
+	@include breakpoint(medium down) {
+    		@include imgback("../data/background.jpg",cover);
+    }
+ }  
+.top-bar{
+	@include top-bar-container;
+	@include foundation-top-bar;
+	ul{
+		@include ulstyle(hidden, $black, 0, 0px, center, none);
+		li{
+			float: left;
+			background-color: $black;
+			a{
+				padding:10px 30px; 
+				@include divtext(inline-block, none); 
+				@include textstyle($white, center, $geo, 100%, bold);
+			}
+			a:hover{
+				background-color:$dark-gray;
+				color:$black;
+			}
+		}
+	}
+}
+
+#contact{	
+	text-align: center;
+	.contactp{
+		@include textstyle($black, center, $verdana, 200%, bold);
+	}	
+	.column{
+		margin: 0px;
+		padding-bottom: 50px;
+		padding-left:0px;
+		.thumbnail{
+			border-radius: 50%;
+			border: 5px $black;
+			width: 100px;
+			height: 100px;
+			margin: 30px 30px;
+			display: inline-block;
+		}
+		.titlep{
+			 color: $blue;
+			 font-size: 25px;
+			 font-weight:bold;
+		}
+		.pp{
+			 font-family: $verdana;
+			 color: $blue;
+			 font-size: 15px;
+		}
+	}
+}
+
+.fixpos{
+		margin:0px;
+		padding: 0px;
+		//background-color: $black;
+		background: url("../data/fix.jpg") no-repeat center center;
+		background-attachment: fixed;
+		@include breakpoint(medium down) {
+    		background-color: $black;
+
+   		 }
+		.poem{
+			@include textstyle($white, left, $font-main, 90%, bold);
+			margin-left: 80px;
+			padding-top: 200px;
+			padding-left: 10px;
+			padding-right: 5px;
+			padding-bottom: 200px;
+			display: inline-block;
+		}
+}
+.slide{	
+	padding-top: 100px;
+	background-color: black;
+	transition: background-color 0.7s ease;
+	text-align: center;
+	.slidep{
+		@include textstyle($white, center, $verdana, 200%, bold);
+	}
+	.carousel{
+			width:100%;
+			padding-top:80px;
+			padding-left:150px;
+			padding-right:50px;
+			padding-bottom:50px;
+
+			.slick-prev:before {
+				  left:30px;
+				  position: fixed;
+				  color: $white;
+				  font-size: 30px;
+			}
+			.slick-next:before {
+			  right: 30px;
+			  position: fixed;
+			  color: $white;
+			  font-size: 30px;
+			}
+			.slick-slide
+			{
+				width: 200px;
+				height: 300px;
+			}
+	}
+}
+.slide:hover{
+	background-color: $orange;
+}
+
+#color{	
+	padding-top:80px;
+	text-align: center;
+	text-family: $font-main;
+	text-weight:bold;
+	.fourthp{
+		padding-top:0px;
+		@include textstyle($black, center, $verdana, 200%, bold);
+	}	
+	.column{
+		text-family: $font-main;
+		text-weight:bold;
+		padding-bottom: 50px;
+		.thumbnail{
+			border-radius: 50%;
+			border: 5px $black;
+			width: 100px;
+			height: 100px;
+			margin: 30px 30px;
+			display: inline-block;
+		}
+	}
+	.reveal{
+		@include textstyle($red, left, $font-main, 150%, bold);
+	}
+}
+
+#sixth{
+	.videoicon{
+		text-align: center;
+		@include textstyle($black, center, $verdana, 200%, bold);
+	}
+	.social{
+		text-align:center;
+		.icon{
+			padding-top: 50px;
+			padding-bottom: 100px;
+			padding-left:30px;
+			padding-right: 30px;
+			display: inline-block;
+		}
+	}
+	.ad{
+		text-align:center;
+	}
+}
+
+
