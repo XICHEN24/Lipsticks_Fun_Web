@@ -47,6 +47,7 @@ h1{
 .background {
 	text-align:center;
 	background: url("../data/background2.jpg") no-repeat center center;
+	background-attachment: fixed;
 	@include breakpoint(medium down) {
     		@include imgback("../data/background.jpg",cover);
     }
@@ -73,6 +74,8 @@ h1{
 }
 
 #contact{	
+	background-color:$white;
+	transition: background-color 0.7s ease;
 	text-align: center;
 	.contactp{
 		@include textstyle($black, center, $verdana, 200%, bold);
@@ -101,7 +104,15 @@ h1{
 		}
 	}
 }
-
+#contact:hover{
+	background-color: $dark-gray;
+	.titlep{
+		color:$white;
+	}
+	.pp{
+		color:$white;
+	}
+}
 .fixpos{
 		margin:0px;
 		padding: 0px;
@@ -123,42 +134,50 @@ h1{
 		}
 }
 .slide{	
-	padding-top: 100px;
-	background-color: black;
-	transition: background-color 0.7s ease;
+	padding-top: 60px;
+	background: url("../data/try.jpg") no-repeat center center;
+	background-attachment: fixed;
+
+	//background-color: black;
+	//transition: background-color 0.7s ease;
 	text-align: center;
 	.slidep{
-		@include textstyle($white, center, $verdana, 200%, bold);
+		@include textstyle($black, center, $verdana, 200%, bold);
+	}
+	.brand{
+		padding-left: 5px;
+		padding-right:5px;
+		display: inline-block;
+		@include textstyle($black, center, $verdana, 120%, bold);
 	}
 	.carousel{
 			width:100%;
-			padding-top:80px;
-			padding-left:150px;
+			padding-top:40px;
+			padding-left:80px;
 			padding-right:50px;
 			padding-bottom:50px;
 
 			.slick-prev:before {
 				  left:30px;
 				  position: fixed;
-				  color: $white;
+				  color: $black;
 				  font-size: 30px;
 			}
 			.slick-next:before {
 			  right: 30px;
 			  position: fixed;
-			  color: $white;
+			  color: $black;
 			  font-size: 30px;
 			}
 			.slick-slide
 			{
+				opacity:0.8;
 				width: 200px;
 				height: 300px;
 			}
 	}
 }
-.slide:hover{
-	background-color: $orange;
-}
+
 
 #color{	
 	padding-top:80px;
@@ -204,6 +223,20 @@ h1{
 	}
 	.ad{
 		text-align:center;
+	}
+}
+
+.footer{
+	padding-left:10px;
+	@include textstyle($black, left, $font-main, 100%, bold);
+	.last{
+		display:inline-block;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include textstyle($black, left, $verdana, 100%, bold);
+	}
+	.lastp{
+		@include textstyle($black, left, $verdana, 150%, bold);
 	}
 }
 

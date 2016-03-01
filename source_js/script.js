@@ -28,6 +28,7 @@ $(document).ready(function(){
   });
 });
 
+
 $(document).ready(function(){
 	$('a[href^="#"]').on('click',function (event) {
 	    event.preventDefault();
@@ -54,7 +55,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	console.log($(window).width());
+
 	if($(window).width()>1024){
 		$(window).scroll(function(){
 			var pos = $(window).scrollTop();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 				if(pos >=100 && pos <= 961){
 					
 					$('.a').css("font-family","Cursive");
-					$('.b').css("font-family","Times");
+					$('.b').css("font-weight","normal");
 					$('.c').css("font-family","Times");
 					$('.d').css("font-family","Times");
 					$('.e').css("font-family","Times");
@@ -116,7 +117,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-	if($(window).width()<1024 && $(window).width()>650){
+	else if($(window).width()<1024 && $(window).width()>665){
 		$(window).scroll(function(){
 			var pos = $(window).scrollTop();
 		//	console.log(pos);
@@ -179,7 +180,7 @@ $(document).ready(function(){
 	}
 
 
-	else if($(window).width()<650){
+	else if($(window).width()<665){
 		$(window).scroll(function(){
 			var pos = $(window).scrollTop();
 	//		console.log(pos);
@@ -241,5 +242,3 @@ $(document).ready(function(){
 		});
 	}
 });
-
-
